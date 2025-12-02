@@ -5,21 +5,24 @@
 }
 
 body {
-    /* Color de texto principal ajustado a un gris oscuro cálido */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    /* Fuente cálida y legible */
+    font-family: 'Georgia', serif; /* Cambiado a una fuente con serifa para un toque clásico/artesanal */
+    line-height: 1.7; /* Ligeramente aumentado para mejor lectura */
     color: #4A4A4A; /* Gris oscuro/carbón */
+    background-color: #FEFAF6; /* Fondo blanco roto/vainilla para calidez */
 }
 
 /* --- SECCIÓN HEADER Y NAVEGACIÓN --- */
 
 header {
     /* Gradiente con los nuevos colores cálidos */
-    background: linear-gradient(135deg, #E98000 0%, #A85A00 100%);
+    background: linear-gradient(90deg, #E98000 0%, #A85A00 100%);
     color: white;
-    padding: 2rem 0;
-    /* La sombra se mantiene, es clave para la profundidad */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0; /* Menos padding arriba para un header más compacto */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra más fuerte y definida */
+    position: sticky; /* Hacemos el header fijo al hacer scroll */
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -32,8 +35,9 @@ nav {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2rem; /* Ligeramente más grande */
+    font-weight: 900; /* Extra bold */
+    letter-spacing: 2px;
 }
 
 nav ul {
@@ -45,32 +49,38 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
-    transition: opacity 0.3s;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    opacity: 0.8;
+    color: #FFD700; /* Dorado sutil al pasar el mouse */
 }
 
 /* --- SECCIÓN HERO --- */
 
 .hero {
-    /* Gradiente con los nuevos colores cálidos */
-    background: linear-gradient(135deg, #E98000 0%, #A85A00 100%);
+    /* Aplicamos una imagen de fondo que represente alfajores (si la tienes) */
+    /* background-image: url('alfajores-background.jpg'); */
+    background: linear-gradient(135deg, rgba(233, 128, 0, 0.9) 0%, rgba(168, 90, 0, 0.9) 100%); /* Usamos un gradiente semi-transparente sobre un posible fondo */
+    background-size: cover;
+    background-position: center;
     color: white;
-    padding: 6rem 2rem;
+    padding: 8rem 2rem; /* Mayor padding para un impacto visual más grande */
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 4rem; /* Más grande para destacar */
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para que destaque sobre el fondo */
     animation: fadeInUp 1s ease;
 }
 
 .hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    font-style: italic;
     animation: fadeInUp 1s ease 0.2s both;
 }
 
@@ -78,113 +88,119 @@ nav a:hover {
 
 .btn {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1.1rem 2.5rem; /* Ligeramente más grande */
     background: white;
-    /* Color del texto del botón ahora es el naranja primario */
     color: #E98000; 
     text-decoration: none;
     border-radius: 50px;
-    font-weight: bold;
-    /* Sombra y animación de transformación se mantienen (genial para el efecto) */
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: 800; /* Más peso */
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     animation: fadeInUp 1s ease 0.4s both;
+    border: 2px solid #E98000; /* Borde que coincide con el color del texto */
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    /* Sombra con más profundidad al hacer hover */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3); 
+    transform: translateY(-5px); /* Movimiento más pronunciado */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); 
+    background-color: #FFF8E1; /* Fondo blanco cremoso al pasar el mouse */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem; /* Más espacio vertical */
 }
 
-/* --- SECCIÓN FEATURES --- */
+/* --- CORRECCIÓN CLAVE: Sobrescribir estilos en línea --- */
+/* Estas reglas eliminan los estilos en línea del HTML para que el CSS funcione */
+#productos h2, #contacto h2 {
+    color: #E98000 !important; /* Usamos el color primario y !important para asegurar que sobrescribe el estilo en línea */
+    font-family: 'Georgia', serif; /* Usamos la fuente serif también aquí */
+}
+
+/* --- SECCIÓN FEATURES (Nuestras Delicias) --- */
 
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptación ligeramente más flexible */
+    gap: 3rem; /* Más espacio entre tarjetas */
     margin-top: 3rem;
 }
 
 .feature-card {
     background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    /* Sombra ligera para las tarjetas */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 2.5rem; /* Más padding */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    text-align: center;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    /* Sombra más marcada al hacer hover */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
+    background-color: #FFF8E1; /* Fondo cremoso al pasar el mouse */
 }
 
 .feature-icon {
-    /* El icono usa el color primario */
+    /* El icono ahora es más grande y centrado */
+    display: block;
     color: #E98000;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
 }
 
 .feature-card h3 {
-    /* Los títulos de las tarjetas usan el color primario */
-    color: #E98000; 
-    margin-bottom: 1rem;
+    color: #A85A00; /* Usamos el color secundario más oscuro */
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
 }
 
 /* --- SECCIÓN ABOUT --- */
 
 .about {
-    /* Fondo con un blanco cremoso/roto */
-    background: #FBF7F3; 
+    background: #FBF7F3; /* Fondo con blanco cremoso/roto */
 }
 
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 5rem; /* Mayor separación */
     align-items: center;
 }
 
 .about-text h2 {
-    /* Los títulos de la sección About usan el color primario */
-    color: #E98000; 
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    color: #A85A00; /* Títulos con el color secundario más profundo */
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .about-image {
-    /* Gradiente con los nuevos colores cálidos */
-    background: linear-gradient(135deg, #E98000 0%, #A85A00 100%);
+    /* Un look más como un alfajor o dulce */
+    background: radial-gradient(circle, #FFC107 0%, #E98000 100%); /* Gradiente circular cálido (dorado a naranja) */
     height: 400px;
-    border-radius: 10px;
+    border-radius: 50%; /* Cambiado a circular para simular una galleta/dulce */
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 5rem;
-    /* Sombra para hacer que la imagen destaque */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+    font-size: 6rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
+    border: 5px solid #A85A00; /* Borde más oscuro */
 }
 
 /* --- FOOTER --- */
 
 footer {
-    /* Fondo de color café/gris muy oscuro */
     background: #3E3A39; 
-    color: white;
+    color: #FFD700; /* Color dorado para el texto del footer */
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
+    font-size: 0.9rem;
 }
 
-/* --- ANIMACIÓN KEYFRAMES Y MEDIA QUERIES (SIN CAMBIOS) --- */
+/* --- ANIMACIÓN KEYFRAMES Y MEDIA QUERIES --- */
 
 @keyframes fadeInUp {
     from {
@@ -198,19 +214,25 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
+    .hero {
+        padding: 4rem 2rem;
     }
-
+    .hero h1 {
+        font-size: 2.5rem;
+    }
     .about-content {
         grid-template-columns: 1fr;
     }
-
-    nav ul {
-        gap: 1rem;
+    .about-image {
+        height: 300px;
+        width: 300px; /* Aseguramos que sea un círculo en móvil */
+        margin: 2rem auto 0 auto;
     }
-
-    .features {
-        grid-template-columns: 1fr;
+    nav ul {
+        display: none; /* Ocultar la navegación en móvil para simplificar, se recomienda un menú hamburguesa */
+    }
+    .logo {
+        width: 100%;
+        text-align: center;
     }
 }
